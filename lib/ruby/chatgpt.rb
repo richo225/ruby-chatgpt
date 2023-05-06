@@ -14,17 +14,24 @@ module Ruby
 
     client = OpenAI::Client.new(access_token: ENV["OPENAI_API_KEY"])
 
-    print "Enter a prompt: "
-    input = gets.chomp
+    loop do
+      print 'Enter a prompt (or "exit" to quit): '
+      input = gets.chomp
 
-    response = client.chat(
-      parameters: {
-        model: "gpt-3.5-turbo", # Required.
-        messages: [{ role: "user", content: input }], # Required.
-        temperature: 0.7
-      }
-    )
+      break if input.downcase == "exit"
 
-    puts response["choices"][0]["message"]["content"]
+      client.chat(
+        parameters: {
+          model: "gpt-3.5-turbo", # Required.
+          messages: [{ role: "user", content: input }], # Required.
+          temperature: 0.7,
+          stream: proc do |chunk, _bytesize|
+            print chunk.dig("choices", 0, "delta", "content")
+          end
+        }
+      )
+
+      puts
+    end
   end
 end
