@@ -1,32 +1,47 @@
-# Ruby::Chatgpt
+# Ruby ChatGPT
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruby/chatgpt`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Gem Version](https://badge.fury.io/rb/ruby-chatgpt.svg)](https://badge.fury.io/rb/ruby-chatgpt)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/richo225/ruby-chatgpt/blob/main/LICENSE.txt)
 
-TODO: Delete this and the text above, and describe your gem
+CLI for interacting and conversing with [OpenAI](https://platform.openai.com/docs/api-reference/chat).
+
+Stream text with GPT-3.5 from the command line! 🌊🤖
+
+Demo for an article I wrote on my [blog](https://richardbates.dev/blog/2023-05-05).
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Install the gem:
 
-    $ bundle add ruby-chatgpt
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install ruby-chatgpt
+```shell
+$ gem install ruby-chatgpt
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+- Get your API key from [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys).
+- Set this value to the `OPENAI_API_KEY` environment variable.
+
+Run the `chatgpt` executable:
+
+```shell
+    $ chatgpt
+    => Enter a prompt (or "exit" to quit): What is the capital of Taiwan?
+    The capital of Taiwan is Taipei.
+    => Enter a prompt (or "exit" to quit): How many people live in Taipei?
+    As an AI language model, I do not have access to real-time data. However, according to the United Nations, the estimated population of Taipei in 2021 is around 2.8 million.
+    => Enter a prompt (or "exit" to quit):
+```
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ruby-chatgpt. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ruby-chatgpt/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/richo225/ruby-chatgpt. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ruby-chatgpt/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
